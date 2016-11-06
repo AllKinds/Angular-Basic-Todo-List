@@ -1,0 +1,22 @@
+<table *ngIf="tasks" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">ID</th>
+      <th>Title</th>
+      <th>Created</th>
+      <th>Done?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td class="mdl-data-table__cell--non-numeric">{{task.id}}</td>
+      <td>{{task.title}}</td>
+      <td>{{task.createdAt | date:'medium'}}</td>
+      <td>{{task.done}}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Colored FAB button with ripple -->
+<button mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple>
+  <mdl-icon>add</mdl-icon>
+</button>
