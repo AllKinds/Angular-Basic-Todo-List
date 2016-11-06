@@ -14,9 +14,24 @@
       <td>{{task.createdAt | date:'medium'}}</td>
       <td>{{task.done}}</td>
     </tr>
+    <tr>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+      <td><input type="text"></td>
+    </tr>
   </tbody>
 </table>
 <!-- Colored FAB button with ripple -->
 <button mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple>
   <mdl-icon>add</mdl-icon>
 </button>
+<mdl-textfield
+        type="text"
+        label="Text..."
+        [(ngModel)]="text1"
+        placeholder="type a text"
+        autofocus
+        autocomplete="name"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"></mdl-textfield>

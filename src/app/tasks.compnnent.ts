@@ -4,7 +4,8 @@ import { TASKS } from './mocks';
 
 @Component ({
 	selector: 'tasks',
-	templateUrl: './tasks.component.html'
+	templateUrl: './tasks.component.html',
+	styleUrls: ['./table.component.css']
 })
 
 export class Tasks {
