@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Task } from './task';
-import { TASKS } from './mocks';
+import { TaskDataService } from './task-data-service';
 
 @Component ({
 	selector: 'tasks',
@@ -10,8 +10,20 @@ import { TASKS } from './mocks';
 
 export class Tasks {
 	tasks: Task[];
+	@Input() newTask: Task;
+	test_2: string;
+	test: string= '5';
+	constructor(private taskDataService: TaskDataService) {}
 
 	ngOnInit() {
-		this.tasks = TASKS
+		this.tasks = this.taskDataService.getTasks();
+	}
+	
+	onNotify(message:string):void {
+		alert(message);
+	}
+
+	submitNewTask(newTask:Task):void {
+		this.tasks.push(newTask);
 	}
 }

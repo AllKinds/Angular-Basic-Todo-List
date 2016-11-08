@@ -5,21 +5,30 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { Tasks } from './tasks.compnnent';
+import { TaskFormComponent } from './task-form.component';
 import { MdlModule } from 'angular2-mdl';
+
+import { TaskDataService } from './task-data-service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Tasks
+    Tasks,
+    TaskFormComponent
+    // MdlTextFieldComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MdlModule,
+    
   ],
-  providers: [],
+  providers: [
+    TaskDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

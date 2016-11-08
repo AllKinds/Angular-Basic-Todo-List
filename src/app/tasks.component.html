@@ -1,3 +1,5 @@
+<task-form (notify)='onNotify($event)' (submitNewTask)='submitNewTask($event)'> </task-form>
+
 <table *ngIf="tasks" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
   <thead>
     <tr>
@@ -12,26 +14,16 @@
       <td class="mdl-data-table__cell--non-numeric">{{task.id}}</td>
       <td>{{task.title}}</td>
       <td>{{task.createdAt | date:'medium'}}</td>
-      <td>{{task.done}}</td>
+      <td><mdl-checkbox [mdl-ripple]="true" [(ngModel)]="task.done"></mdl-checkbox></td>
     </tr>
-    <tr>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
-      <td><input type="text"></td>
+    <tr *ngIf="text1||text2||text3||text4">
+      <td> {{text1}} </td>
+      <td> {{text2}} </td>
+      <td> {{text3}} </td>
+      <td> {{text4}} </td>
     </tr>
   </tbody>
 </table>
+<input type="string" [(ngModel)]='test_2'>
+<p>This is: {{test_2}}</p> 
 <!-- Colored FAB button with ripple -->
-<button mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple>
-  <mdl-icon>add</mdl-icon>
-</button>
-<mdl-textfield
-        type="text"
-        label="Text..."
-        [(ngModel)]="text1"
-        placeholder="type a text"
-        autofocus
-        autocomplete="name"
-        (blur)="onBlur($event)"
-        (focus)="onFocus($event)"></mdl-textfield>

@@ -1,0 +1,9 @@
+<div id="new-task-input" >
+  <mdl-textfield type="text" label="ID" pattern="-?[0-9]*(\.[0-9]+)?" error-msg="Input is not a number!" [(ngModel)]="model.id" floating-label ></mdl-textfield>
+  <mdl-textfield type="text" label="Title" [(ngModel)]="model.title" floating-label></mdl-textfield>
+  <mdl-textfield type="text" label="Created At" [(ngModel)]="model.createdAt" floating-label></mdl-textfield>
+  <button mdl-button  mdl-button-type="fab" mdl-colored="accent" mdl-ripple (click)="onSubmit()">
+    <mdl-icon>add</mdl-icon>
+  </button>
+  This is: {{test}}
+</div>
