@@ -16,11 +16,25 @@ export class TaskFormComponent {
 	@Output() submitNewTask = new EventEmitter<Task>();
 
 	onSubmit() { 
-		this.submited = true;
+		
 		this.notify.emit('Click from nested component');
+		if(!this.isInputValid()) { return }
+		this.submited = true;
 		this.submitNewTask.emit(this.model);
 	}
+	
+	isInputValid() {
+		if (!(
+			Number(this.model.id) &&
+			this.model.title &&
+			true // change that
+			 )) {
+			alert(" Please enter details correctly");
+			return false;
+		}
+		return true;
 
+	}
 	// TODO: Remove function Later
 	get diagnostic() { return JSON.stringify(this.model); }
 }
